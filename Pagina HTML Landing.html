@@ -1,4 +1,3 @@
-<!-- File: index.html (versión SIN estilos CSS) -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,6 +6,111 @@
   <title>Landing de Adán Cornejo</title>
   <meta name="description" content="Página personal de Adán Cornejo: portada, sobre mí, hobbies, favoritas y contacto." />
   <meta name="theme-color" content="#0b0c0e" />
+
+  <style>
+    /* ===== Variables y base ===== */
+    :root {
+      --bg: #0b0c0e;
+      --text: #e9eef3;
+      --muted: #a8b0ba;
+      --card: #14171a;
+      --border: #2a2f35;
+      --accent: #34d399; /* verde agradable */
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius: 16px;
+      --container: min(100% - 2rem, 900px);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7f9;
+        --text: #0e1116;
+        --muted: #475569;
+        --card: #ffffff;
+        --border: #e5e7eb;
+        --accent: #10b981;
+        --shadow: 0 10px 24px rgba(2,6,23,.08);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 400px at 15% -5%, rgba(52,211,153,.08), transparent),
+                  radial-gradient(1000px 350px at 100% 0%, rgba(52,211,153,.06), transparent), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--text); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== Cabecera y navegación ===== */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in lab, var(--bg), transparent 15%);
+      backdrop-filter: saturate(1.2) blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: .8rem 0;
+      text-align: center;
+    }
+    header > * { width: var(--container); margin-inline: auto; }
+    header h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2rem); }
+    header small { color: var(--muted); }
+    nav p { margin: .5rem 0 0; }
+    nav a {
+      display: inline-block; margin: .2rem .2rem; padding: .45rem .8rem;
+      border: 1px solid var(--border); border-radius: 999px; background: var(--card);
+    }
+    nav a:hover { background: color-mix(in lab, var(--card), var(--accent) 10%); text-decoration: none; }
+
+    /* ===== Contenido ===== */
+    main { width: var(--container); margin-inline: auto; padding: 1.2rem 0 2rem; }
+    section { scroll-margin-top: 90px; }
+    section > h2 { font-size: clamp(1.25rem, 3vw, 1.6rem); margin-bottom: .6rem; }
+    section > p, section ul { margin-top: .2rem; }
+
+    /* Tarjetas para cada sección */
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem;
+      box-shadow: var(--shadow);
+    }
+    /* Separadores estilizados (conservando tu <hr>) */
+    hr {
+      width: var(--container);
+      margin: 1.5rem auto; border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* Listas */
+    ul { padding-left: 1.1rem; }
+    li + li { margin-top: .35rem; }
+
+    /* Enlaces y foco accesible */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid color-mix(in lab, var(--accent), white 30%);
+      outline-offset: 3px; border-radius: 8px;
+    }
+
+    /* Skip link accesible */
+    body > a[href="#portada"] {
+      position: absolute; left: -9999px;
+    }
+    body > a[href="#portada"]:focus {
+      left: 1rem; top: 1rem; z-index: 100; padding: .5rem .75rem; border-radius: 8px;
+      background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+
+    /* Destacar sección enfocada por ancla */
+    :target { box-shadow: 0 0 0 3px color-mix(in lab, var(--accent), white 30%) inset, var(--shadow); }
+
+    /* Pie */
+    footer { width: var(--container); margin: 0 auto 2rem; color: var(--muted); text-align: center; }
+  </style>
 </head>
 <body>
   <a href="#portada">Saltar a contenido</a>
@@ -75,8 +179,7 @@
         <p>Email: <a href="mailto:adan.cornejo228558@potros.itson.edu.mx">adan.cornejo228558@potros.itson.edu.mx</a></p>
         <p>GitHub: <a href="https://github.com/InkLao" target="_blank" rel="noopener">InkLao</a></p>
       </address>
-
-            <p><a href="#portada">Volver arriba ↑</a></p>
+      <p><a href="#portada">Volver arriba ↑</a></p>
     </section>
   </main>
 
@@ -87,7 +190,7 @@
   </footer>
 
   <script>
-    // Actualiza el año automáticamente
+    // Año dinámico
     (function () {
       var y = new Date().getFullYear();
       var t = document.getElementById('year');
