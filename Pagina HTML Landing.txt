@@ -1,66 +1,80 @@
+<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-        }
-        section {
-            margin: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: auto;
-        }
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 20px;
-        }
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing de Adán Cornejo</title>
 </head>
 <body>
-    <header>
-        <h1>Adán Cornejo </h1>
-    </header>
-    <section>
-        <h2>Sobre mí</h2>
-        <p>Soy Adán Cornejo, estudiante de la carrera de ingeniería en Software. Soy alguien que le gusta ser camarada con las personas, pero intolerante hacia los abusos.</p>
+  <header>
+    <h1>Adán Cornejo</h1>
+    <p>Estudiante de Ingeniería en Software</p>
+    <nav aria-label="Navegación principal">
+      <a href="#portada">Portada</a> |
+      <a href="#sobre-mi">Sobre mí</a> |
+      <a href="#hobbies">Hobbies</a> |
+      <a href="#favoritas">Series o Películas favoritas</a> |
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="portada" aria-labelledby="portada-titulo">
+      <h2 id="portada-titulo">Portada</h2>
+      <p>¡Hola! Bienvenido a mi página personal. Aquí comparto un poco sobre quién soy, lo que me gusta y cómo contactarme.</p>
     </section>
-    <section>
-        <h2>Mis hobbies</h2>
-        <ul>
-            <li>Jugador Competitivo de Super Smash Bros. Ultimate</li>
-            <li>Ocasional editor de videos</li>
-            <li>Pasar el rato con amigos</li>
-        </ul>
+
+    <section id="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <h2 id="sobre-mi-titulo">Sobre mí</h2>
+      <p>Soy Adán Cornejo, estudiante de la carrera de Ingeniería en Software. Me gusta colaborar con la gente y soy intolerante hacia los abusos. Disfruto aprender cosas nuevas y participar en comunidades de tecnología y videojuegos.</p>
     </section>
-    <footer>
-        <p>Visita mi <a href="https://github.com/InkLao" target="_blank">GitHub</a></p>
-    </footer>
+
+    <section id="hobbies" aria-labelledby="hobbies-titulo">
+      <h2 id="hobbies-titulo">Mis hobbies</h2>
+      <ul>
+        <li>Jugador competitivo de Super Smash Bros. Ultimate</li>
+        <li>Edición ocasional de videos</li>
+        <li>Pasar el rato con amigos</li>
+      </ul>
+    </section>
+
+    <section id="favoritas" aria-labelledby="favoritas-titulo">
+      <h2 id="favoritas-titulo">Series o Películas favoritas</h2>
+      <h3>Series</h3>
+      <ul>
+        <li><strong>Breaking Bad</strong> — por su desarrollo de personajes y tensión narrativa.</li>
+        <li><strong>Avatar: The Last Airbender</strong> — mundo bien construido y crecimiento de los protagonistas.</li>
+      </ul>
+      <h3>Películas</h3>
+      <ul>
+        <li><strong>Spider-Man: Into the Spider-Verse</strong> — animación innovadora y gran banda sonora.</li>
+        <li><strong>Interstellar</strong> — ciencia ficción emotiva y espectacular.</li>
+      </ul>
+    </section>
+
+    <section id="contacto" aria-labelledby="contacto-titulo">
+      <h2 id="contacto-titulo">Contacto</h2>
+      <p>¿Te gustaría colaborar o saludar? Escríbeme:</p>
+      <ul>
+        <li>Email: <a href="mailto:adan.cornejo@example.com">adan.cornejo@example.com</a></li>
+        <li>GitHub: <a href="https://github.com/InkLao" target="_blank" rel="noopener">InkLao</a></li>
+        <!-- Mantengo solo enlaces simples para cumplir el requisito de "sin estilos" y evitar dependencias. -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year">2025</span> Adán Cornejo</p>
+  </footer>
+
+  <script>
+    // Por accesibilidad y vigencia del contenido
+    (function() {
+      var y = new Date().getFullYear();
+      var el = document.getElementById('year');
+      if (el) el.textContent = y;
+    })();
+  </script>
 </body>
 </html>

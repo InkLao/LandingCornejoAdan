@@ -1,0 +1,98 @@
+<!-- File: index.html (versión SIN estilos CSS) -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing de Adán Cornejo</title>
+  <meta name="description" content="Página personal de Adán Cornejo: portada, sobre mí, hobbies, favoritas y contacto." />
+  <meta name="theme-color" content="#0b0c0e" />
+</head>
+<body>
+  <a href="#portada">Saltar a contenido</a>
+
+  <header>
+    <h1>Adán Cornejo</h1>
+    <p><small>Estudiante de Ingeniería en Software</small></p>
+    <nav aria-label="Navegación principal">
+      <p>
+        <a href="#portada" title="Ir a Portada">Portada</a> ·
+        <a href="#sobre-mi" title="Ir a Sobre mí">Sobre mí</a> ·
+        <a href="#hobbies" title="Ir a Hobbies">Hobbies</a> ·
+        <a href="#favoritas" title="Ir a Series o Películas favoritas">Series o Películas</a> ·
+        <a href="#contacto" title="Ir a Contacto">Contacto</a>
+      </p>
+    </nav>
+  </header>
+
+  <hr>
+
+  <main>
+    <section id="portada" aria-labelledby="portada-titulo">
+      <h2 id="portada-titulo">Portada</h2>
+      <p>¡Hola! Bienvenido a mi página personal. Aquí comparto un poco sobre quién soy y lo que me gusta</p>
+    </section>
+
+    <hr>
+
+    <section id="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <h2 id="sobre-mi-titulo">Sobre mí</h2>
+      <p>Soy Adán Cornejo, estudiante de la carrera de Ingeniería en Software. Me gusta colaborar con la gente y soy intolerante hacia los abusos. Disfruto aprender cosas nuevas y participar en comunidades de tecnología y videojuegos.</p>
+    </section>
+
+    <hr>
+
+    <section id="hobbies" aria-labelledby="hobbies-titulo">
+      <h2 id="hobbies-titulo">Mis hobbies</h2>
+      <ul>
+        <li>Jugador competitivo de Super Smash Bros. Ultimate</li>
+        <li>Edición ocasional de videos</li>
+        <li>Pasar el rato con amigos</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section id="favoritas" aria-labelledby="favoritas-titulo">
+      <h2 id="favoritas-titulo">Series o Películas favoritas</h2>
+      <h3>Series</h3>
+      <ul>
+        <li><strong>The Amazing Digital Circus</strong> — Concepto muy bueno, disfrutable, y el doblaje es un plus.</li>
+        <li><strong>Supercampeones</strong> — Gusto que heredé de mis parientes, además de que tengo un gusto alto por el fútbol (Arriba las águilas).</li>
+      </ul>
+      <h3>Películas</h3>
+      <ul>
+        <li><strong>Los Tipos Malos</strong> — De las mejores películas animadas infantiles, fue recomendada por un amigo.</li>
+        <li><strong>Como Entrenar a tu Dragón</strong> — Crecí con toda la saga de películas; la última fue un broche de oro para cerrar una etapa.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section id="contacto" aria-labelledby="contacto-titulo">
+      <h2 id="contacto-titulo">Contacto</h2>
+      <address>
+        <p>Email: <a href="mailto:adan.cornejo228558@potros.itson.edu.mx">adan.cornejo228558@potros.itson.edu.mx</a></p>
+        <p>GitHub: <a href="https://github.com/InkLao" target="_blank" rel="noopener">InkLao</a></p>
+      </address>
+
+            <p><a href="#portada">Volver arriba ↑</a></p>
+    </section>
+  </main>
+
+  <hr>
+
+  <footer>
+    <p>&copy; <time id="year" datetime="2025">2025</time> · Adán Cornejo</p>
+  </footer>
+
+  <script>
+    // Actualiza el año automáticamente
+    (function () {
+      var y = new Date().getFullYear();
+      var t = document.getElementById('year');
+      if (t) { t.textContent = y; t.setAttribute('datetime', String(y)); }
+    })();
+  </script>
+</body>
+</html>
