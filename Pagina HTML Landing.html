@@ -1,21 +1,21 @@
+<!-- File: index.html (landingenglish branch – English content) -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Landing de Adán Cornejo</title>
-  <meta name="description" content="Página personal de Adán Cornejo: portada, sobre mí, hobbies, favoritas y contacto." />
+  <title>Adán Cornejo — Personal Landing</title>
+  <meta name="description" content="Personal page of Adán Cornejo: home, about me, hobbies, favorites and contact." />
   <meta name="theme-color" content="#0b0c0e" />
 
   <style>
-    /* ===== Variables y base ===== */
     :root {
       --bg: #0b0c0e;
       --text: #e9eef3;
       --muted: #a8b0ba;
       --card: #14171a;
       --border: #2a2f35;
-      --accent: #34d399; /* verde agradable */
+      --accent: #34d399;
       --shadow: 0 10px 30px rgba(0,0,0,.25);
       --radius: 16px;
       --container: min(100% - 2rem, 900px);
@@ -46,7 +46,6 @@
     a { color: var(--text); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ===== Cabecera y navegación ===== */
     header {
       position: sticky; top: 0; z-index: 50;
       background: color-mix(in lab, var(--bg), transparent 15%);
@@ -65,13 +64,11 @@
     }
     nav a:hover { background: color-mix(in lab, var(--card), var(--accent) 10%); text-decoration: none; }
 
-    /* ===== Contenido ===== */
     main { width: var(--container); margin-inline: auto; padding: 1.2rem 0 2rem; }
     section { scroll-margin-top: 90px; }
     section > h2 { font-size: clamp(1.25rem, 3vw, 1.6rem); margin-bottom: .6rem; }
     section > p, section ul { margin-top: .2rem; }
 
-    /* Tarjetas para cada sección */
     section {
       background: var(--card);
       border: 1px solid var(--border);
@@ -79,52 +76,44 @@
       padding: 1.25rem 1rem;
       box-shadow: var(--shadow);
     }
-    /* Separadores estilizados (conservando tu <hr>) */
     hr {
       width: var(--container);
       margin: 1.5rem auto; border: none; height: 1px;
       background: linear-gradient(90deg, transparent, var(--border), transparent);
     }
 
-    /* Listas */
     ul { padding-left: 1.1rem; }
     li + li { margin-top: .35rem; }
 
-    /* Enlaces y foco accesible */
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
       outline: 3px solid color-mix(in lab, var(--accent), white 30%);
       outline-offset: 3px; border-radius: 8px;
     }
 
-    /* Skip link accesible */
-    body > a[href="#portada"] {
-      position: absolute; left: -9999px;
-    }
+    body > a[href="#portada"] { position: absolute; left: -9999px; }
     body > a[href="#portada"]:focus {
       left: 1rem; top: 1rem; z-index: 100; padding: .5rem .75rem; border-radius: 8px;
       background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow);
     }
 
-    /* Destacar sección enfocada por ancla */
     :target { box-shadow: 0 0 0 3px color-mix(in lab, var(--accent), white 30%) inset, var(--shadow); }
 
-    /* Pie */
     footer { width: var(--container); margin: 0 auto 2rem; color: var(--muted); text-align: center; }
   </style>
 </head>
 <body>
-  <a href="#portada">Saltar a contenido</a>
+  <a href="#portada">Skip to content</a>
 
   <header>
     <h1>Adán Cornejo</h1>
-    <p><small>Estudiante de Ingeniería en Software</small></p>
-    <nav aria-label="Navegación principal">
+    <p><small>Software Engineering Student</small></p>
+    <nav aria-label="Main navigation">
       <p>
-        <a href="#portada" title="Ir a Portada">Portada</a> ·
-        <a href="#sobre-mi" title="Ir a Sobre mí">Sobre mí</a> ·
-        <a href="#hobbies" title="Ir a Hobbies">Hobbies</a> ·
-        <a href="#favoritas" title="Ir a Series o Películas favoritas">Series o Películas</a> ·
-        <a href="#contacto" title="Ir a Contacto">Contacto</a>
+        <a href="#portada" title="Go to Home">Home</a> ·
+        <a href="#sobre-mi" title="Go to About me">About me</a> ·
+        <a href="#hobbies" title="Go to Hobbies">Hobbies</a> ·
+        <a href="#favoritas" title="Go to Favorite Series or Movies">Favorite Series or Movies</a> ·
+        <a href="#contacto" title="Go to Contact">Contact</a>
       </p>
     </nav>
   </header>
@@ -133,53 +122,53 @@
 
   <main>
     <section id="portada" aria-labelledby="portada-titulo">
-      <h2 id="portada-titulo">Portada</h2>
-      <p>¡Hola! Bienvenido a mi página personal. Aquí comparto un poco sobre quién soy y lo que me gusta</p>
+      <h2 id="portada-titulo">Home</h2>
+      <p>Hi! Welcome to my personal page. Here I share a bit about who I am and what I like.</p>
     </section>
 
     <hr>
 
     <section id="sobre-mi" aria-labelledby="sobre-mi-titulo">
-      <h2 id="sobre-mi-titulo">Sobre mí</h2>
-      <p>Soy Adán Cornejo, estudiante de la carrera de Ingeniería en Software. Me gusta colaborar con la gente y soy intolerante hacia los abusos. Disfruto aprender cosas nuevas y participar en comunidades de tecnología y videojuegos.</p>
+      <h2 id="sobre-mi-titulo">About me</h2>
+      <p>I am Adán Cornejo, a Software Engineering student. I like collaborating with people and I am intolerant of abuse. I enjoy learning new things and taking part in tech and gaming communities.</p>
     </section>
 
     <hr>
 
     <section id="hobbies" aria-labelledby="hobbies-titulo">
-      <h2 id="hobbies-titulo">Mis hobbies</h2>
+      <h2 id="hobbies-titulo">My hobbies</h2>
       <ul>
-        <li>Jugador competitivo de Super Smash Bros. Ultimate</li>
-        <li>Edición ocasional de videos</li>
-        <li>Pasar el rato con amigos</li>
+        <li>Competitive Super Smash Bros. Ultimate player</li>
+        <li>Occasional video editor</li>
+        <li>Hanging out with friends</li>
       </ul>
     </section>
 
     <hr>
 
     <section id="favoritas" aria-labelledby="favoritas-titulo">
-      <h2 id="favoritas-titulo">Series o Películas favoritas</h2>
+      <h2 id="favoritas-titulo">Favorite Series or Movies</h2>
       <h3>Series</h3>
       <ul>
-        <li><strong>The Amazing Digital Circus</strong> — Concepto muy bueno, disfrutable, y el doblaje es un plus.</li>
-        <li><strong>Supercampeones</strong> — Gusto que heredé de mis parientes, además de que tengo un gusto alto por el fútbol (Arriba las águilas).</li>
+        <li><strong>The Amazing Digital Circus</strong> — Great concept, enjoyable, and the dubbing is a plus.</li>
+        <li><strong>Captain Tsubasa (Supercampeones)</strong> — A taste I inherited from my relatives; I also have a strong love for football (Go Águilas!).</li>
       </ul>
-      <h3>Películas</h3>
+      <h3>Movies</h3>
       <ul>
-        <li><strong>Los Tipos Malos</strong> — De las mejores películas animadas infantiles, fue recomendada por un amigo.</li>
-        <li><strong>Como Entrenar a tu Dragón</strong> — Crecí con toda la saga de películas; la última fue un broche de oro para cerrar una etapa.</li>
+        <li><strong>The Bad Guys</strong> — One of the best animated kids' movies; it was recommended by a friend.</li>
+        <li><strong>How to Train Your Dragon</strong> — I grew up with the whole saga; the last one was the perfect closing to a chapter.</li>
       </ul>
     </section>
 
     <hr>
 
     <section id="contacto" aria-labelledby="contacto-titulo">
-      <h2 id="contacto-titulo">Contacto</h2>
+      <h2 id="contacto-titulo">Contact</h2>
       <address>
         <p>Email: <a href="mailto:adan.cornejo228558@potros.itson.edu.mx">adan.cornejo228558@potros.itson.edu.mx</a></p>
         <p>GitHub: <a href="https://github.com/InkLao" target="_blank" rel="noopener">InkLao</a></p>
       </address>
-      <p><a href="#portada">Volver arriba ↑</a></p>
+      <p><a href="#portada">Back to top ↑</a></p>
     </section>
   </main>
 
@@ -190,7 +179,6 @@
   </footer>
 
   <script>
-    // Año dinámico
     (function () {
       var y = new Date().getFullYear();
       var t = document.getElementById('year');
